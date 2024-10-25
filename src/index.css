@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+/* Base button styles */
+.btn-primary,
+.btn-secondary {
+  @apply font-black rounded-lg transition duration-300 ease-in-out;
+}
+
+/* Primary button styles */
+.btn-primary {
+  @apply bg-primary py-2 px-4;
+}
+
+.btn-primary:hover {
+  @apply bg-primary-dark; /* Use a darker shade for hover */
+}
+
+.btn-primary:active {
+  @apply bg-primary-darker; /* Use an even darker shade for active state */
+}
+
+/* Secondary button styles */
+.btn-secondary {
+  @apply bg-secondary text-white py-2 px-4;
+}
+
+.btn-secondary:hover {
+  @apply bg-secondary-dark; /* Use a darker shade for hover */
+}
+
+.btn-secondary:active {
+  @apply bg-secondary-darker; /* Use an even darker shade for active state */
+}
