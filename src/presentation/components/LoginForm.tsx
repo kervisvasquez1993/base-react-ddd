@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import useAuthRedirect from '@/presentation/hooks/useAuthRedirect'
+import { generateEndPoint } from '@/utils'
 import axios from 'axios'
 
 const LoginForm = () => {
@@ -14,8 +15,7 @@ const LoginForm = () => {
   const [countdown, setCountdown] = useState<number | null>(null)
 
   const navigate = useNavigate()
-  const api = import.meta.env.VITE_APP_BACKEND_URL
-  const endpoint = `${api}/login`
+  const endpoint = generateEndPoint('/login')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
