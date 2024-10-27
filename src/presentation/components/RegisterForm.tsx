@@ -4,7 +4,7 @@ import axios from 'axios'
 import useAuthRedirect from '@/presentation/hooks/useAuthRedirect'
 
 const RegisterForm = () => {
-  useAuthRedirect() // Redirect to home if already authenticated
+  useAuthRedirect() 
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -51,9 +51,7 @@ const RegisterForm = () => {
           message: `Welcome, ${response.data.user.username}! Registration successful. Redirecting to login in 5 seconds...`,
           type: 'success',
         })
-        setCountdown(5) // Start countdown
-
-        // Clear the form fields after successful registration
+        setCountdown(5)
         setUsername('')
         setEmail('')
         setPassword('')
