@@ -9,7 +9,7 @@ export const PrivateRoute = ({ children }: Props) => {
   const token = useAuthStore((state) => state.token);
 
   if (!token) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/tabline" />;
   }
 
   return children;

@@ -14,74 +14,94 @@ import { LoginScreen } from "../screens/Login.screen";
 import { RegisterScreen } from '../screens/Register.screen';
 import { HomeScreen } from "../screens/Home.screen";
 import { LandingLayout } from "../layouts/LandingLayout";
+import { TablineScreen } from "../screens/TabLine.screen";
+import { QuizScreen } from "../screens/QuizScreen.screen";
+import { QuestionScreen } from "../screens/Question.screen";
+import { SettingsScreen } from "../screens/Setting.screen";
+import { ProfileScreen } from "../screens/Profile.screen";
 export const menuRoutes = [
     {
         to: "home",
         icon: Home,
         title: "Inicio",
-        description: "Home Page",
+        description: "Página de Inicio",
         component: <HomeScreen />,
-    },
-    {
-        to: "login",
-        icon: Home,
-        title: "Login Page",
-        description: "Login Page",
-        component: <LoginScreen />,
-    },
-    {
-        to: "register",
-        icon: Home,
-        title: "Register Page",
-        description: "Register Page",
-        component: <RegisterScreen />,
     },
     {
         to: "tabline",
         icon: Home,
-        title: "Tabline Page",
-        description: "Tabline Page",
-        component: <RegisterScreen />,
+        title: "Tabline",
+        description: "Página Tabline",
+        component: <TablineScreen />,
     },
-
+    {
+        to: "quiz/:quizId",
+        icon: Home,
+        title: "Quiz",
+        description: "Página del Quiz",
+        component: <QuizScreen />,
+    },
+    {
+        to: "question/:questionId",
+        icon: Home,
+        title: "Pregunta",
+        description: "Página de Pregunta",
+        component: <QuestionScreen />,
+    },
     {
         to: "logout",
         icon: LogOut,
         title: "Cerrar Sesión",
-        description: "Logout Page",
+        description: "Logout",
         component: <div>Logout</div>,
     },
 ];
+
 export const router = createBrowserRouter([
     {
         path: "/login",
         element: (
             <PublicRoute>
+                <LoginScreen />
+            </PublicRoute>
+        ),
+    },
+    {
+        path: "/register",
+        element: (
+            <PublicRoute>
+                <RegisterScreen />
+            </PublicRoute>
+        ),
+    },
+    {
+        path: "/",
+        element: (
+            <PublicRoute>
                 <LandingLayout />
             </PublicRoute>
         ),
+        children: [
+            { path: "tabline", element: <TablineScreen /> },
+            { path: "quiz/:quizId", element: <QuizScreen /> },
+            { path: "question/:questionId", element: <QuestionScreen /> },
+        ],
     },
     {
         path: "/dashboard",
         element: (
             <PrivateRoute>
-                {/* <DashboardLayout /> */}
-                <h1>hola</h1>
+                <HomeScreen /> 
             </PrivateRoute>
         ),
         children: [
-            ...menuRoutes.map((route) => ({
-                path: route.to,
-                element: route.component,
-            })),
-            {
-                path: "",
-                element: <Navigate to="home" />,
-            },
+            { path: "", element: <Navigate to="profile" /> },
+            { path: "profile", element: <ProfileScreen /> },
+            { path: "settings", element: <SettingsScreen /> },
         ],
     },
     {
-        path: "/",
+        path: "*",
         element: <Navigate to="/login" />,
     },
 ]);
