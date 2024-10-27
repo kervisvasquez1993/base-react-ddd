@@ -58,23 +58,7 @@ export const menuRoutes = [
 ];
 
 export const router = createBrowserRouter([
-    {
-        path: "/login",
-        element: (
-            <PublicRoute>
-                <LoginScreen />
-            </PublicRoute>
-        ),
-    },
-    {
-        path: "/register",
-        element: (
-            <PublicRoute>
-                <RegisterScreen />
-            </PublicRoute>
-        ),
-    },
-    {
+       {
         path: "/",
         element: (
             <PublicRoute>
@@ -82,6 +66,8 @@ export const router = createBrowserRouter([
             </PublicRoute>
         ),
         children: [
+            { path: "login", element: <LoginScreen /> },
+            { path: "register", element: <RegisterScreen /> },
             { path: "tabline", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },
