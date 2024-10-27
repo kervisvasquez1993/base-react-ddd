@@ -1,8 +1,7 @@
 import { create, StateCreator } from "zustand";
-import { AuthStatus } from "../../infrastructure/interfaces/auth/auth.status";
-
 import { devtools, persist } from "zustand/middleware";
 import { authLogin } from "@/actions/auth/auth.action";
+import { AuthStatus } from "@/infrastructure/interfaces/auth/auth.status";
 
 export interface AuthState {
   status: AuthStatus;
