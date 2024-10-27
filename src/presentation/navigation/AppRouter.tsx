@@ -19,6 +19,7 @@ import { QuizScreen } from "../screens/QuizScreen.screen";
 import { QuestionScreen } from "../screens/Question.screen";
 import { SettingsScreen } from "../screens/Setting.screen";
 import { ProfileScreen } from "../screens/Profile.screen";
+import { AuthLayout } from "../layouts/AuthLayout";
 export const menuRoutes = [
     {
         to: "home",
@@ -58,7 +59,7 @@ export const menuRoutes = [
 ];
 
 export const router = createBrowserRouter([
-       {
+    {
         path: "/",
         element: (
             <PublicRoute>
@@ -68,7 +69,7 @@ export const router = createBrowserRouter([
         children: [
             { path: "login", element: <LoginScreen /> },
             { path: "register", element: <RegisterScreen /> },
-            { path: "tabline", element: <TablineScreen /> },
+            { path: "", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },
         ],
@@ -77,13 +78,16 @@ export const router = createBrowserRouter([
         path: "/dashboard",
         element: (
             <PrivateRoute>
-                <HomeScreen /> 
+                <AuthLayout />
             </PrivateRoute>
         ),
         children: [
             { path: "", element: <Navigate to="profile" /> },
             { path: "profile", element: <ProfileScreen /> },
             { path: "settings", element: <SettingsScreen /> },
+            { path: "tabline", element: <TablineScreen /> },
+            { path: "quiz/:quizId", element: <QuizScreen /> },
+            { path: "question/:questionId", element: <QuestionScreen /> },
         ],
     },
     {
