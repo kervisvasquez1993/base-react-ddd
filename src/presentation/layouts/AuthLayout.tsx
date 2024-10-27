@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom"
 import { Footer, Header } from "../components";
+import { HeaderAuth } from "../components/HeaderAuth";
 
 
-export const LandingLayout = () => {
+export const AuthLayout = () => {
     return (
         <div className='flex flex-col min-h-screen'>
-            <Header />
+            <HeaderAuth />
             <main className='flex-grow'>
                 <div className='flex flex-col items-center justify-center h-screen bg-background'>
+
                     <Outlet />
+
                 </div>
             </main>
             {/* <Footer /> */}
