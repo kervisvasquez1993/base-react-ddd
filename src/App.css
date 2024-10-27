@@ -1,1 +1,75 @@
+/* Primary button */
+.btn-primary {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #ffffff;
+  background-color: #4a90e2;
+  border: 2px solid transparent;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, transform 0.2s;
+}
 
+.btn-primary:hover {
+  background-color: #357ab8;
+  transform: scale(1.05);
+}
+
+/* Secondary button */
+.btn-secondary {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  color: #4a90e2;
+  background-color: transparent;
+  border: 2px solid #4a90e2;
+  border-radius: 0.5rem;
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+}
+
+.btn-secondary:hover {
+  background-color: #4a90e2;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+/* Styles for btn-true */
+.btn-true {
+  background-color: #4caf50; /* Green background */
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-true:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+.btn-true:active {
+  transform: scale(0.95); /* Slight scale effect on click */
+}
+
+/* Styles for btn-false */
+.btn-false {
+  background-color: #f44336; /* Red background */
+  color: white;
+  font-size: 1rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-false:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+.btn-false:active {
+  transform: scale(0.95); /* Slight scale effect on click */
+}
