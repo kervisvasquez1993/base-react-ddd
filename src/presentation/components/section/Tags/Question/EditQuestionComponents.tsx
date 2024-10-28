@@ -6,6 +6,8 @@ import { Input } from '@/presentation/components/ui/input'
 import { Label } from '@/presentation/components/ui/label'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/presentation/components/ui/select'
 import { Pencil } from 'lucide-react'
+import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline'
+import { Spinner } from '../../SpinerComponents'
 
 interface Question {
     id: number,
@@ -19,6 +21,7 @@ interface Props {
 
 export const EditQuestionComponents = ({ question }: Props) => {
     const [isEditQuestionOpen, setIsEditQuestionOpen] = useState(false)
+    const { data, isLoading } = useInitialDataQuiz()
     return (
         <>
             <Button variant="ghost" size="icon" onClick={() => { setIsEditQuestionOpen(true) }}>
@@ -50,11 +53,18 @@ export const EditQuestionComponents = ({ question }: Props) => {
                                             <SelectValue placeholder="Selecciona una categoría" />
                                         </SelectTrigger>
                                         <SelectContent>
-                                            {/* {categories.map((category) => (
-                                            <SelectItem key={category.id} value={category.id.toString()}>
-                                                {category.name}
-                                            </SelectItem>
-                                        ))} */}
+                                            {
+                                                isLoading ? <Spinner /> : (
+                                                    data.data.map((quiz: any) => (
+                                                        <SelectItem key={quiz.id} value={quiz.id.toString()}>
+                                                            {quiz.title}
+                                                        </SelectItem>
+                                                    ))
+                                                )
+                                            }
+                                            {
+
+                                            }
                                         </SelectContent>
                                     </Select>
                                 </div>
