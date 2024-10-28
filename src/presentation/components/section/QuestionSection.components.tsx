@@ -2,6 +2,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card
 import { Badge } from '../ui/badge'
 import { useInitialDataQuestionTabline } from '@/presentation/hooks/initialDataQuestionTabline';
 import { Spinner } from './Spiner.components';
+import { Link } from 'react-router-dom';
 
 export const QuestionSectionComponent = () => {
     const { data, isLoading } = useInitialDataQuestionTabline();
@@ -17,8 +18,8 @@ export const QuestionSectionComponent = () => {
                             </CardHeader>
                             <CardContent className="flex-grow">
                                 <img
-                                    src={question.image}
-                                    alt={question.question}
+                                    src={question.image ? `${import.meta.env.VITE_API_BACKEND}${question.image}` : "/no-image.jpg"}
+                                    alt={question.question || "No image available"}
                                     width={300}
                                     height={200}
                                     className="w-full h-48 object-cover rounded-md mb-4"
@@ -32,7 +33,9 @@ export const QuestionSectionComponent = () => {
                             </CardContent>
                             <CardFooter className="justify-end">
                                 <Badge variant="outline" className="cursor-pointer">
-                                    Ver detalles
+                                    <Link to={`/question/${question.id}`}>
+                                        Ver detalles
+                                    </Link>
                                 </Badge>
                             </CardFooter>
                         </Card>
