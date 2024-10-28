@@ -3,7 +3,7 @@ import { Badge } from "../components/ui/badge"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "../components/ui/table"
 import { useInitialDataQuestionOne } from "../hooks/loadDataQuestionOne";
 import { loadDataAnswerByQuestion } from "../hooks/loadAnswerByQuestions";
-import { Spinner } from "../components/section/Spiner.components";
+import { Spinner } from "../components/section/SpinerComponents";
 
 
 
