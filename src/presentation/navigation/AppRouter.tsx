@@ -20,6 +20,7 @@ import { QuestionScreen } from "../screens/Question.screen";
 import { SettingsScreen } from "../screens/Setting.screen";
 import { ProfileScreen } from "../screens/Profile.screen";
 import { AuthLayout } from "../layouts/AuthLayout";
+import { AdminScreen } from "../screens/Admin.screen";
 
 export const menuRoutes = [
     {
@@ -83,10 +84,10 @@ export const router = createBrowserRouter([
             </PrivateRoute>
         ),
         children: [
-            { path: "", element: <Navigate to="profile" /> },
-            { path: "profile", element: <ProfileScreen /> },
+            { path: "", element: <TablineScreen/> },
+            { path: "admin", element: <AdminScreen /> },
             { path: "settings", element: <SettingsScreen /> },
-            { path: "tabline", element: <TablineScreen /> },
+            // { path: "tabline", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },
         ],

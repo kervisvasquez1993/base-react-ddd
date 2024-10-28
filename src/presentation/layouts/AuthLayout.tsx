@@ -8,10 +8,8 @@ export const AuthLayout = () => {
         <div className='flex flex-col min-h-screen'>
             <HeaderAuth />
             <main className='flex-grow'>
-                <div className='flex flex-col items-center justify-center h-screen bg-background'>
-
+                <div className='flex flex-col items-center justify-center bg-background'>
                     <Outlet />
-
                 </div>
             </main>
             {/* <Footer /> */}
