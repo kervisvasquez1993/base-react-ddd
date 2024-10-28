@@ -20,6 +20,7 @@ import { QuestionScreen } from "../screens/Question.screen";
 import { SettingsScreen } from "../screens/Setting.screen";
 import { ProfileScreen } from "../screens/Profile.screen";
 import { AuthLayout } from "../layouts/AuthLayout";
+
 export const menuRoutes = [
     {
         to: "home",

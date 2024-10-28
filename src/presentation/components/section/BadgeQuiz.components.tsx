@@ -13,7 +13,6 @@ export const BadgeQuizComponents = () => {
                             key={quiz.id}
                             variant={"outline"}
                             className="cursor-pointer text-lg px-4 py-2 rounded-[15px]"
-                        // onClick={() => setSelectedQuizId(quiz.id === selectedQuizId ? null : quiz.id)}
                         >
                             {quiz.title}
                         </Badge>
