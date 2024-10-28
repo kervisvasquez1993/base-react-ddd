@@ -7,20 +7,6 @@ import { TagsQuizComponent } from '../components/section/Tags/Quiz/TagsQuizCompo
 import { TagQuestionComponent } from '../components/section/Tags/Question/TagQuestionComponent'
 
 
-// Tipos de datos
-type Category = {
-  id: number
-  name: string
-}
-
-type Question = {
-  id: number
-  question: string
-  isCorrect: boolean
-  image: string
-  categoryId: number
-}
-
 export function AdminScreen() {
   return (
     <div className="container mx-auto p-4">
