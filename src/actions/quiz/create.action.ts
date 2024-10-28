@@ -4,7 +4,7 @@ import { QuizPayload, QuizResponse, QuizSuccessResponse } from "@/infrastructure
 
 export const addQuizAction = async (token: string, quizData: QuizPayload): Promise<QuizResponse> => {
     try {
-        const response = await ApiBackend.post("/api/quizzes", quizData, {
+        const response = await ApiBackend.post("/api/quiz", quizData, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -37,4 +37,4 @@ export const addQuizAction = async (token: string, quizData: QuizPayload): Promi
         throw new Error(errorMessage);
     }
 };
-``
+
