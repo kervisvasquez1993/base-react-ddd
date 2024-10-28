@@ -1,9 +1,9 @@
-import { useInitialDataQuizTabline } from '@/presentation/hooks/initialDataQuizTabline'
-import { Spinner } from './Spiner.components'
+import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline'
+import { Spinner } from './SpinerComponents'
 import { Badge } from '../ui/badge'
 
 export const BadgeQuizComponents = () => {
-    const { data, isLoading } = useInitialDataQuizTabline()
+    const { data, isLoading } = useInitialDataQuiz()
     return (
         <div className="flex flex-wrap gap-2 justify-center">
             {

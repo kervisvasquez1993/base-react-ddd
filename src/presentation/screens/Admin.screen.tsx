@@ -10,6 +10,7 @@ import { Input } from '../components/ui/input'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../components/ui/table'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select'
 import { Checkbox } from '../components/ui/checkbox'
+import { TagsQuizComponent } from '../components/section/TagsQuizComponents'
 
 // Tipos de datos
 type Category = {
@@ -99,71 +100,7 @@ export  function AdminScreen() {
           <TabsTrigger value="questions">Preguntas</TabsTrigger>
         </TabsList>
         <TabsContent value="categories">
-          <div className="mb-4">
-            <Dialog open={isAddCategoryOpen} onOpenChange={setIsAddCategoryOpen}>
-              <DialogTrigger asChild>
-                <Button>Agregar Categoría</Button>
-              </DialogTrigger>
-              <DialogContent>
-                <DialogHeader>
-                  <DialogTitle>Agregar Nueva Categoría</DialogTitle>
-                </DialogHeader>
-                <form onSubmit={(e) => {
-                  e.preventDefault()
-                  const name = (e.target as HTMLFormElement).categoryName.value
-                  addCategory(name)
-                }}>
-                  <Label htmlFor="categoryName">Nombre de la Categoría</Label>
-                  <Input id="categoryName" name="categoryName" required />
-                  <Button type="submit" className="mt-4">Guardar</Button>
-                </form>
-              </DialogContent>
-            </Dialog>
-          </div>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Nombre</TableHead>
-                <TableHead>Acciones</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {categories.map((category) => (
-                <TableRow key={category.id}>
-                  <TableCell>{category.name}</TableCell>
-                  <TableCell>
-                    <Button variant="ghost" size="icon" onClick={() => {
-                      setEditingCategory(category)
-                      setIsEditCategoryOpen(true)
-                    }}>
-                      <Pencil className="h-4 w-4" />
-                    </Button>
-                    <Button variant="ghost" size="icon" onClick={() => deleteCategory(category.id)}>
-                      <Trash2 className="h-4 w-4" />
-                    </Button>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-          <Dialog open={isEditCategoryOpen} onOpenChange={setIsEditCategoryOpen}>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Editar Categoría</DialogTitle>
-              </DialogHeader>
-              {editingCategory && (
-                <form onSubmit={(e) => {
-                  e.preventDefault()
-                  const name = (e.target as HTMLFormElement).categoryName.value
-                  updateCategory(editingCategory.id, name)
-                }}>
-                  <Label htmlFor="categoryName">Nombre de la Categoría</Label>
-                  <Input id="categoryName" name="categoryName" defaultValue={editingCategory.name} required />
-                  <Button type="submit" className="mt-4">Actualizar</Button>
-                </form>
-              )}
-            </DialogContent>
-          </Dialog>
+          <TagsQuizComponent/>
         </TabsContent>
         <TabsContent value="questions">
           <div className="mb-4">

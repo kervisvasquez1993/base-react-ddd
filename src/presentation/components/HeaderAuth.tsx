@@ -10,7 +10,7 @@ export const HeaderAuth = () => {
         <header className="bg-background border-b">
             <div className="container mx-auto px-4">
                 <div className="flex h-16 items-center justify-between">
-                    <div className="flex items-center">
+                    <div className="flex items-center justify-between w-full">
                         <Link to="/" className="text-2xl font-bold text-primary">
                             QuizApp
                         </Link>
@@ -21,12 +21,12 @@ export const HeaderAuth = () => {
                             <Link to="/quizzes" className="text-muted-foreground hover:text-primary transition-colors">
                                 Quizzes
                             </Link>
-                            <Link to="/leaderboard" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Link to="/leaderboard" className="text-muted-foreground hover:text-primary transition-colors ">
                                 Clasificación
                             </Link>
                         </nav>
                     </div>
-                    <div className="flex items-center">
+                    <div className="flex items-center ">
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" className="relative h-8 w-8 rounded-full">
@@ -45,16 +45,15 @@ export const HeaderAuth = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
+                                    <Link to={"admin"} className='flex items-center'>
                                     <Home className="mr-2 h-4 w-4" />
-                                    <span>Inicio</span>
+                                    <span>Admin</span>
+                                    </Link>
+                                    
                                 </DropdownMenuItem>
                                 <DropdownMenuItem>
                                     <Book className="mr-2 h-4 w-4" />
-                                    <span>Mis Quizzes</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    <Settings className="mr-2 h-4 w-4" />
-                                    <span>Configuración</span>
+                                    <span>Mis Respuestas</span>
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>

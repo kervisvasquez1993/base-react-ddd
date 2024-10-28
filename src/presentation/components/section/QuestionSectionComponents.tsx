@@ -1,7 +1,7 @@
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '../ui/card'
 import { Badge } from '../ui/badge'
 import { useInitialDataQuestionTabline } from '@/presentation/hooks/initialDataQuestionTabline';
-import { Spinner } from './Spiner.components';
+import { Spinner } from './SpinerComponents';
 import { Link } from 'react-router-dom';
 
 export const QuestionSectionComponent = () => {

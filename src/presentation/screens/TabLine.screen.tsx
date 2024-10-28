@@ -1,5 +1,5 @@
-import { BadgeQuizComponents } from '../components/section/BadgeQuiz.components'
-import { QuestionSectionComponent } from '../components/section/QuestionSection.components'
+import { BadgeQuizComponents } from '../components/section/BadgeQuizComponents'
+import { QuestionSectionComponent } from '../components/section/QuestionSectionComponents'
 export function TablineScreen() {
     return (
         <div className="min-h-screen flex flex-col">
