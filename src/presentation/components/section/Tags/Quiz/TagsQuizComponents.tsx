@@ -1,20 +1,15 @@
 import React, { useState } from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../ui/dialog';
-import { Button } from '../ui/button';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../ui/table';
-import { Pencil, Trash2 } from 'lucide-react';
+import { Trash2 } from 'lucide-react';
 import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline';
 import { AddQuizComponent } from './AddQuizComponents';
-import { Spinner } from './SpinerComponents';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/presentation/components/ui/table';
+import { Spinner } from '../../SpinerComponents';
 import { EditQuizComponents } from './EditQuizComponents';
+import { Button } from '@/presentation/components/ui/button';
+
 
 export const TagsQuizComponent = () => {
     const { data, isLoading } = useInitialDataQuiz();
-
-    console.log(data);
-
     return (
         <>
             <div className="mb-4">

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog';
-import { Label } from '../ui/label';
-import { Input } from '../ui/input';
-import { Button } from '../ui/button';
+
 import { Pencil } from 'lucide-react';
+import { Button } from '@/presentation/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/presentation/components/ui/dialog';
+import { Label } from '@/presentation/components/ui/label';
+import { Input } from '@/presentation/components/ui/input';
 interface Quiz {
     id: string
     title: string,
