@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Trash2 } from 'lucide-react';
 import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline';
 import { AddQuizComponent } from './AddQuizComponents';
