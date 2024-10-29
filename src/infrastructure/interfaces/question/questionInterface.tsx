@@ -5,6 +5,11 @@ export interface QuestionPayload {
     image: File | null;
     quiz_id: number
 }
+export interface QuestionUpdatePayload {
+    quiz_id: number;
+    question: string;
+    correct_answer: boolean;
+}
 
 
 export interface QuestionSuccessResponse {
@@ -18,4 +23,4 @@ export interface QuestionSuccessResponse {
     id: number;
 }
 
-export type QuestionResponse = QuestionSuccessResponse | ErrorResponse;
+export type QuestionResponse = QuestionSuccessResponse | ErrorResponse | QuestionUpdatePayload;

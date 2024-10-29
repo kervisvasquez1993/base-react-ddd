@@ -29,7 +29,7 @@ export const TagQuestionComponent = () => {
                 <TableBody>
                     {
                         isLoading ? <Spinner /> : (
-                            data.data.map((question: any) => (
+                            data?.data?.map((question: any) => (
                                 <TableRow key={question.id}>
                                     <TableCell>{question.question}</TableCell>
                                     <TableCell>{question.correct_answer ? 'Sí' : 'No'}</TableCell>
@@ -47,8 +47,10 @@ export const TagQuestionComponent = () => {
                             ))
                         )
                     }
+
                 </TableBody>
             </Table>
+
         </>
     )
 }

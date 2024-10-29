@@ -1,4 +1,3 @@
-// useEditQuiz.ts
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useAuthStore } from '../store/useAuthStatus.store';
