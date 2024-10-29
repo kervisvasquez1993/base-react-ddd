@@ -4,7 +4,6 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { usePositionUser } from '@/presentation/hooks/loadDataPositionUser'
 import { useAuthStore } from '@/presentation/store/useAuthStatus.store'
 import { User } from 'lucide-react'
-import React from 'react'
 import { Link } from 'react-router-dom'
 
 

@@ -54,7 +54,7 @@ export const TagQuestionComponent = () => {
                                     <TableCell>
                                         <EditQuestionComponents question={question} />
 
-                                        <EditQuestionImageComponents id={question.id} />
+                                        <EditQuestionImageComponents  />
                                         <Button
                                             variant="ghost"
                                             size="icon"

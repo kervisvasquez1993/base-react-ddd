@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+
 import { Link } from 'react-router-dom'
 
-const Header = () => {
+export const Header = () => {
 
   return (
     <header className="bg-background border-b">
@@ -27,4 +27,3 @@ const Header = () => {
   )
 }
 
-export default Header

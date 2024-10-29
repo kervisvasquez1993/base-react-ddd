@@ -1,8 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Button } from './ui/button'
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from './ui/dropdown-menu'
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
-import { Book, Home, LogOut, Settings } from 'lucide-react'
+
 
 export const HeaderAuth = () => {
     return (

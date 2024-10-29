@@ -10,7 +10,7 @@ import { PlayerAnswerForm } from "../components/PlayerAnswerForm";
 
 export function QuestionScreen() {
     const { questionId } = useParams();
-    const { data: questionData, isLoading: questionLoading, isError } = useInitialDataQuestionOne({ id: questionId || "" });
+    const { data: questionData, isLoading: questionLoading } = useInitialDataQuestionOne({ id: questionId || "" });
     const { data, isLoading } = loadDataAnswerByQuestion({ id: questionId || "" });
 
 

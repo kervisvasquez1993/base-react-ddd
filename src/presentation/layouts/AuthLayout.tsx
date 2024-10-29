@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom"
-import { Footer, Header } from "../components";
 import { HeaderAuth } from "../components/HeaderAuth";
 
 

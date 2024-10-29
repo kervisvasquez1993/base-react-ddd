@@ -1,7 +1,3 @@
-'use client'
-
-import { useState } from 'react'
-
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../components/ui/tabs'
 import { TagsQuizComponent } from '../components/section/Tags/Quiz/TagsQuizComponents'
 import { TagQuestionComponent } from '../components/section/Tags/Question/TagQuestionComponent'

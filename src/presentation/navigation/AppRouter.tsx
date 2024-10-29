@@ -4,10 +4,6 @@ import { PrivateRoute } from "./PrivateRoute";
 
 import {
     Home,
-    Users,
-    Wallet,
-    Landmark,
-    NotepadText,
     LogOut,
 } from "lucide-react";
 import { LoginScreen } from "../screens/Login.screen";
@@ -17,8 +13,6 @@ import { LandingLayout } from "../layouts/LandingLayout";
 import { TablineScreen } from "../screens/TabLine.screen";
 import { QuizScreen } from "../screens/QuizScreen.screen";
 import { QuestionScreen } from "../screens/Question.screen";
-import { SettingsScreen } from "../screens/Setting.screen";
-import { ProfileScreen } from "../screens/Profile.screen";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { AdminScreen } from "../screens/Admin.screen";
 import { ClasificationScreen } from "../screens/Auth/Clasification.screen";

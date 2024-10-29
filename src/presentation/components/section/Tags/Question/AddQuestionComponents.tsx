@@ -1,14 +1,12 @@
-import React, { useState } from 'react'
+import  { useState } from 'react'
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '../../../ui/dialog'
 import { Button } from '../../../ui/button'
 import { Label } from '../../../ui/label'
 import { Input } from '../../../ui/input'
-import { Checkbox } from '../../../ui/checkbox'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../../../ui/select'
 import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline'
 import { Spinner } from '../../SpinerComponents'
 import { useAddQuestion } from '@/presentation/hooks/useAddQuestion'
-import { Controller } from 'react-hook-form'
+
 
 export const AddQuestionComponents = () => {
     const [isAddQuestionOpen, setIsAddQuestionOpen] = useState(false)
