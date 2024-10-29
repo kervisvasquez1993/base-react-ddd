@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '@/presentation/components/ui/button'
-import { Checkbox } from '@/presentation/components/ui/checkbox'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/presentation/components/ui/dialog'
 import { Input } from '@/presentation/components/ui/input'
 import { Label } from '@/presentation/components/ui/label'
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/presentation/components/ui/select'
 import { Pencil } from 'lucide-react'
 import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline'
 import { Spinner } from '../../SpinerComponents'
@@ -29,7 +27,7 @@ export const EditQuestionComponents = ({ question }: Props) => {
     useEffect(() => {
         setValue("question", question.question);
         setValue("correct_answer", question.correct_answer);
-        setValue("quiz_id", question.quiz_id.toString()); 
+        setValue("quiz_id", question.quiz_id.toString());
     }, [question, setValue]);
 
     return (
@@ -76,7 +74,7 @@ export const EditQuestionComponents = ({ question }: Props) => {
                                     <option value="">Selecciona una categoría</option>
                                     {isLoading ? (
                                         <option disabled>
-                                            Cargando...
+                                            <Spinner />
                                         </option>
                                     ) : (
                                         data.data.map((quiz: any) => (
