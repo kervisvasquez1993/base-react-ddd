@@ -17,16 +17,21 @@ Instale as dependências:
 Use npm ou Yarn para instalar as dependências do projeto.
 
 Com npm:
-npm install
+- npm install
 Ou com Yarn:
 
-yarn install
+- yarn install
 
 Se o projeto precisar de um arquivo de configuração de ambiente, copie o .env.example para .env e ajuste os valores conforme necessário.
 
-cp .env.example .env
+- cp .env.example .env
 
 Inicie o servidor de desenvolvimento:
 Execute o servidor de desenvolvimento do Vite. Isso abrirá a aplicação no modo de desenvolvimento, geralmente em http://localhost:5173.
 
 Com npm:
+
+- npm run dev
+
+- yarn dev
+
