@@ -21,10 +21,14 @@ export const HeaderAuth = () => {
                             <Link to="/dashboard/leaderboard" className="text-muted-foreground hover:text-primary transition-colors ">
                                 Clasificación
                             </Link>
+                            <Link to={"/dashboard/admin"} className='flex items-center'>
+
+                                <span>Admin</span>
+                            </Link>
                         </nav>
                     </div>
                     <div className="flex items-center ">
-                        <DropdownMenu>
+                        {/* <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <Button variant="ghost" className="relative h-8 w-8 rounded-full">
                                     <Avatar className="h-8 w-8">
@@ -42,11 +46,8 @@ export const HeaderAuth = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                    <Link to={"/dashboard/admin"} className='flex items-center'>
-                                    <Home className="mr-2 h-4 w-4" />
-                                    <span>Admin</span>
-                                    </Link>
-                                    
+                                   
+
                                 </DropdownMenuItem>
                                 <DropdownMenuItem>
                                     <Book className="mr-2 h-4 w-4" />
@@ -58,7 +59,7 @@ export const HeaderAuth = () => {
                                     <span>Cerrar sesión</span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
-                        </DropdownMenu>
+                        </DropdownMenu> */}
                     </div>
                 </div>
             </div>

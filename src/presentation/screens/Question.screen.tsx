@@ -10,14 +10,13 @@ import { PlayerAnswerForm } from "../components/PlayerAnswerForm";
 
 export function QuestionScreen() {
     const { questionId } = useParams();
-    const { data: questionData, isLoading: questionLoading } = useInitialDataQuestionOne({ id: questionId || "" });
+    const { data: questionData, isLoading: questionLoading, isError } = useInitialDataQuestionOne({ id: questionId || "" });
     const { data, isLoading } = loadDataAnswerByQuestion({ id: questionId || "" });
 
 
-    console.log(data)
-    console.log(isLoading)
 
 
+    
 
     return (
         <div className="container mx-auto p-4 space-y-6">
