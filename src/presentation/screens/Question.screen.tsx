@@ -4,6 +4,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from ".
 import { useInitialDataQuestionOne } from "../hooks/loadDataQuestionOne";
 import { loadDataAnswerByQuestion } from "../hooks/loadAnswerByQuestions";
 import { Spinner } from "../components/section/SpinerComponents";
+import { PlayerAnswerForm } from "../components/PlayerAnswerForm";
 
 
 
@@ -36,6 +37,9 @@ export function QuestionScreen() {
                     <div className="space-y-4">
                         <div>
                             <Badge variant="secondary">{questionData.quiz.title}</Badge>
+                        </div>
+                        <div>
+                            <PlayerAnswerForm questionId={questionId  || "" }/>
                         </div>
 
                     </div>
