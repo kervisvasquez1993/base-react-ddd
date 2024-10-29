@@ -2,7 +2,7 @@ import React from 'react'
 import { AddQuestionComponents } from './AddQuestionComponents'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../ui/table'
 import { Button } from '../../../ui/button'
-import { ImageIcon, Pencil, Trash2 } from 'lucide-react'
+import { Trash2 } from 'lucide-react'
 import { EditQuestionComponents } from './EditQuestionComponents'
 import { useInitialDataQuestionTabline } from '@/presentation/hooks/initialDataQuestionTabline'
 import { Spinner } from '../../SpinerComponents'
@@ -37,7 +37,7 @@ export const TagQuestionComponent = () => {
                                     {/* */}
                                     <TableCell>
                                         <EditQuestionComponents question={question} />
-                                        
+
                                         <EditQuestionImageComponents id={question.id} />
                                         <Button variant="ghost" size="icon" onClick={() => console.log("hola")}>
                                             <Trash2 className="h-4 w-4" />
@@ -47,11 +47,8 @@ export const TagQuestionComponent = () => {
                             ))
                         )
                     }
-
                 </TableBody>
             </Table>
-
-
         </>
     )
 }
