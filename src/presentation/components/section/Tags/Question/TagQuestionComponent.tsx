@@ -32,7 +32,7 @@ export const TagQuestionComponent = () => {
                             data.data.map((question: any) => (
                                 <TableRow key={question.id}>
                                     <TableCell>{question.question}</TableCell>
-                                    <TableCell>{question.isCorrect ? 'Sí' : 'No'}</TableCell>
+                                    <TableCell>{question.correct_answer ? 'Sí' : 'No'}</TableCell>
                                     {LoadingQuiz ? <Spinner /> : (<TableCell>{quizData.data.find((c: any) => c.title === question.quiz_name)?.title}</TableCell>)}
                                     {/* */}
                                     <TableCell>
