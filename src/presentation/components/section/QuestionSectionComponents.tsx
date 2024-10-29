@@ -3,9 +3,11 @@ import { Badge } from '../ui/badge'
 import { useInitialDataQuestionTabline } from '@/presentation/hooks/initialDataQuestionTabline';
 import { Spinner } from './SpinerComponents';
 import { Link } from 'react-router-dom';
+import { useAuthStore } from '@/presentation/store/useAuthStatus.store';
 
 export const QuestionSectionComponent = () => {
     const { data, isLoading } = useInitialDataQuestionTabline();
+    const token = useAuthStore(state => state.token)
     console.log(data)
     return (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -33,7 +35,7 @@ export const QuestionSectionComponent = () => {
                             </CardContent>
                             <CardFooter className="justify-end">
                                 <Badge variant="outline" className="cursor-pointer">
-                                    <Link to={`/question/${question.id}`}>
+                                    <Link to={token ? `/dashboard/question/${question.id}` : `/question/${question.id}`}>
                                         Ver detalles
                                     </Link>
                                 </Badge>

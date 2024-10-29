@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 import { LoginScreen } from "../screens/Login.screen";
 import { RegisterScreen } from '../screens/Register.screen';
-import { HomeScreen } from "../screens/Home.screen";
+import { HomeScreen } from "../screens/Auth/Home.screen";
 import { LandingLayout } from "../layouts/LandingLayout";
 import { TablineScreen } from "../screens/TabLine.screen";
 import { QuizScreen } from "../screens/QuizScreen.screen";
@@ -21,6 +21,7 @@ import { SettingsScreen } from "../screens/Setting.screen";
 import { ProfileScreen } from "../screens/Profile.screen";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { AdminScreen } from "../screens/Admin.screen";
+import { ClasificationScreen } from "../screens/Auth/Clasification.screen";
 
 export const menuRoutes = [
     {
@@ -86,7 +87,7 @@ export const router = createBrowserRouter([
         children: [
             { path: "", element: <TablineScreen/> },
             { path: "admin", element: <AdminScreen /> },
-            { path: "settings", element: <SettingsScreen /> },
+            { path: "leaderboard", element: <ClasificationScreen /> },
             // { path: "tabline", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },

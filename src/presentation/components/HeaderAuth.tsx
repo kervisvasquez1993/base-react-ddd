@@ -15,13 +15,10 @@ export const HeaderAuth = () => {
                             QuizApp
                         </Link>
                         <nav className="ml-8 hidden md:flex space-x-4">
-                            <Link to="/" className="text-muted-foreground hover:text-primary transition-colors">
+                            <Link to="/dashboard" className="text-muted-foreground hover:text-primary transition-colors">
                                 Inicio
                             </Link>
-                            <Link to="/quizzes" className="text-muted-foreground hover:text-primary transition-colors">
-                                Quizzes
-                            </Link>
-                            <Link to="/leaderboard" className="text-muted-foreground hover:text-primary transition-colors ">
+                            <Link to="/dashboard/leaderboard" className="text-muted-foreground hover:text-primary transition-colors ">
                                 Clasificación
                             </Link>
                         </nav>
@@ -45,7 +42,7 @@ export const HeaderAuth = () => {
                                 </DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem>
-                                    <Link to={"admin"} className='flex items-center'>
+                                    <Link to={"/dashboard/admin"} className='flex items-center'>
                                     <Home className="mr-2 h-4 w-4" />
                                     <span>Admin</span>
                                     </Link>
