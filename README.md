@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+Projeto React com Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este projeto é uma aplicação em React configurada com Vite. Abaixo estão os passos para configurá-lo e executá-lo em seu ambiente local.
 
-Currently, two official plugins are available:
+Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Node.js (versão recomendada: >= 14.x)
+npm ou Yarn como gerenciador de pacotes
+Instruções de Configuração
 
-## Expanding the ESLint configuration
+Clone o repositório e navegue até a pasta do projeto:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+git clone <URL_DO_REPOSITORIO>
+cd <NOME_DO_PROJETO>
 
-- Configure the top-level `parserOptions` property like this:
+Instale as dependências:
+Use npm ou Yarn para instalar as dependências do projeto.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Com npm:
+npm install
+Ou com Yarn:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+yarn install
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Se o projeto precisar de um arquivo de configuração de ambiente, copie o .env.example para .env e ajuste os valores conforme necessário.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+cp .env.example .env
+
+Inicie o servidor de desenvolvimento:
+Execute o servidor de desenvolvimento do Vite. Isso abrirá a aplicação no modo de desenvolvimento, geralmente em http://localhost:5173.
+
+Com npm:
