@@ -22,6 +22,7 @@ import { ProfileScreen } from "../screens/Profile.screen";
 import { AuthLayout } from "../layouts/AuthLayout";
 import { AdminScreen } from "../screens/Admin.screen";
 import { ClasificationScreen } from "../screens/Auth/Clasification.screen";
+import { UserResponsesScreen } from "../screens/RespuestaUser.screen";
 
 export const menuRoutes = [
     {
@@ -74,6 +75,7 @@ export const router = createBrowserRouter([
             { path: "register", element: <RegisterScreen /> },
             { path: "", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
+            { path: "user/:userId", element: <UserResponsesScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },
         ],
     },
@@ -90,6 +92,7 @@ export const router = createBrowserRouter([
             { path: "leaderboard", element: <ClasificationScreen /> },
             // { path: "tabline", element: <TablineScreen /> },
             { path: "quiz/:quizId", element: <QuizScreen /> },
+            { path: "user/:userId", element: <UserResponsesScreen /> },
             { path: "question/:questionId", element: <QuestionScreen /> },
         ],
     },
