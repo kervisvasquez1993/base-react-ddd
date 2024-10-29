@@ -25,6 +25,7 @@ export const EditQuestionImageComponents = ({ id }: Props) => {
                 <DialogContent>
                     <DialogHeader>
                         <DialogTitle>Editar Imagen de la Pregunta</DialogTitle>
+                        <DialogTitle> <p className="text-red-500">Logica en el frontend no implementada </p></DialogTitle>
                     </DialogHeader>
 
                     <form onSubmit={(e) => {

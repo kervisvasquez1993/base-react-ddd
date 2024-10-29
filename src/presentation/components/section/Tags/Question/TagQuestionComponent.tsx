@@ -1,4 +1,3 @@
-import React from 'react'
 import { AddQuestionComponents } from './AddQuestionComponents'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '../../../ui/table'
 import { Button } from '../../../ui/button'
@@ -8,10 +7,27 @@ import { useInitialDataQuestionTabline } from '@/presentation/hooks/initialDataQ
 import { Spinner } from '../../SpinerComponents'
 import { EditQuestionImageComponents } from './EditQuestionImageComponents'
 import { useInitialDataQuiz } from '@/presentation/hooks/initialDataQuizTabline'
+import { useAuthStore } from '@/presentation/store/useAuthStatus.store'
+import { deleteQuestionUseCase } from '@/core/use-case/question/delete.use-case'
+import { toast } from 'sonner'
 
 export const TagQuestionComponent = () => {
-    const { data, isLoading } = useInitialDataQuestionTabline()
+    const { data, isLoading, mutate } = useInitialDataQuestionTabline()
     const { data: quizData, isLoading: LoadingQuiz } = useInitialDataQuiz()
+    const token = useAuthStore(state => state.token)
+    const handleDeleteQuestion = async (questionId: number) => {
+        try {
+            if (token) {
+                const data = await deleteQuestionUseCase(token, questionId);
+                console.log(data);
+                mutate(); 
+                toast.success(`Pregunta eliminada de forma correcta.`);
+            }
+        } catch (error) {
+            console.error("Error eliminando la pregunta:", error);
+            toast.error("Ocurrió un error al intentar eliminar la pregunta.");
+        }
+    };
     return (
         <>
             <div className="mb-4">
@@ -39,7 +55,11 @@ export const TagQuestionComponent = () => {
                                         <EditQuestionComponents question={question} />
 
                                         <EditQuestionImageComponents id={question.id} />
-                                        <Button variant="ghost" size="icon" onClick={() => console.log("hola")}>
+                                        <Button
+                                            variant="ghost"
+                                            size="icon"
+                                            onClick={() => handleDeleteQuestion(question.id)}
+                                        >
                                             <Trash2 className="h-4 w-4" />
                                         </Button>
                                     </TableCell>
